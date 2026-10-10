@@ -43,3 +43,4 @@
   const year = document.getElementById('landingYear');
   if (year) year.textContent = String(new Date().getFullYear());
 })();
+ 
