@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f5ff"><meta name="csrf-token" content="<%= csrfToken %>">
+  <meta name="description" content="Sign in to your CampusConnect student portal.">
+  <title><%= title %> · CampusConnect</title><link rel="stylesheet" href="/css/app.css"><link rel="stylesheet" href="/css/real-auth.css">
+  <script src="/js/auth.js" defer></script>
+</head><body>
+  <div id="motionProgress"><span></span></div>
+  <section class="login-screen auth-screen">
+    <%- include('partials/auth-visual') %>
+    <div class="login-form-side"><form class="login-form auth-form" id="loginForm" data-endpoint="/api/auth/login">
+      <div class="mobile-login-brand"><span class="brand-mark">C</span><strong>CampusConnect</strong></div>
+      <span class="eyebrow">WELCOME BACK</span><h2>Sign in to your portal</h2>
+      <p class="muted login-subtitle">Pick up where your campus journey left off.</p>
+      <label for="loginEmail">Student email</label><input class="field login-input" id="loginEmail" name="email" type="email" autocomplete="username" placeholder="you@college.edu" required maxlength="254">
+      <label for="loginPassword">Password</label><div class="password-wrap"><input class="field login-input" id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required><button type="button" class="password-toggle" data-password-toggle="loginPassword">Show</button></div>
+      <div class="login-options"><span class="remember-option">Secure 8-hour session</span><a href="/forgot-password">Forgot password?</a></div>
+      <button type="submit" class="primary-btn login-submit"><span class="btn-label">Sign in securely</span><span>→</span></button>
+      <p class="login-error form-message" id="loginMessage" aria-live="polite"></p>
+      <div class="auth-divider"><span>NEW TO CAMPUSCONNECT?</span></div><a class="secondary-auth-btn" href="/register">Create your student account <span>↗</span></a>
+      <p class="login-privacy">Protected account access · Passwords are securely hashed on the server.</p>
+    </form></div>
+  </section>
+</body></html>
